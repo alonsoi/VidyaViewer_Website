@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DevelopersAddComponent } from './developers-add/developers-add.component';
 
 @Component({
   selector: 'app-developers-update-navigation',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DevelopersUpdateNavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(public addDeveloperDialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
+  onAddDeveloper()
+  {
+    const addDeveloperDialog= this.addDeveloperDialog.open(DevelopersAddComponent, {
+      width: "500px"
+    });
+
+    addDeveloperDialog.afterOpened().subscribe(result => {
+      console.log('Add Developer Dialog opened');
+    })
+  }
 }

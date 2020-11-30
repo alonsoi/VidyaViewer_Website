@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { GameAddComponent } from './game-add/game-add.component';
 
 @Component({
   selector: 'app-game-update-navigation',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameUpdateNavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(public addGameDialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
+  onAddGame()
+  {
+    const addGameDialog= this.addGameDialog.open(GameAddComponent, {
+      width: "500px"
+    });
+
+    addGameDialog.afterOpened().subscribe(result => {
+      console.log('Add Game Dialog opened');
+    })
+  }
 }
