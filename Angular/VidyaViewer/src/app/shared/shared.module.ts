@@ -7,7 +7,7 @@ import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from '../modules/login/login.component';
-import { AdminLoginComponent } from '../modules/admin-login/admin-login.component';
+import { AdminLoginComponent } from '../modules/admin/admin-login/admin-login.component';
 import { SignUpComponent } from '../modules/sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
 

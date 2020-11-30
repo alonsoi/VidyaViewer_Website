@@ -15,6 +15,10 @@
             <button mat-raised-button color="primary" type= "submit" [disabled]="loginServ.formLogin.invalid"> Submit</button>
             <button mat-raised-button type="basic" (click)="onCancel()"> Cancel</button>
         </div>
+        <div>
+            Don't have an account? 
+            <button mat-flat-button type="basic" (click)="onSignupRedirect()">Sign Up </button>    
+        </div>
     </div>
 
 </form>

@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatDialogConfig } from '@angular/material/dialog/dialog-config';
 import { SignUpComponent } from 'src/app/modules/sign-up/sign-up.component';
 import { LoginComponent } from 'src/app/modules/login/login.component';
-import { AdminLoginComponent } from 'src/app/modules/admin-login/admin-login.component';
+import { AdminLoginComponent } from 'src/app/modules/admin/admin-login/admin-login.component';
 
 
 @Component({
@@ -24,11 +24,11 @@ export class HeaderComponent implements OnInit {
   }
 
   onLogin(){
-    this.signUpDialog.open(LoginComponent);
+    this.loginDialog.open(LoginComponent);
 
   }
   onAdminLogin(){
-    this.signUpDialog.open(AdminLoginComponent);
+    this.adminDialog.open(AdminLoginComponent);
 
   }
 }
