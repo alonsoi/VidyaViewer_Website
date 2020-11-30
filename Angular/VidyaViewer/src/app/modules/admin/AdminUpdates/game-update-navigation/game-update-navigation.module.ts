@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from 'src/app/shared/material/material.module';
-import { GameUpdateComponent } from './game-update.component';
+import { GameUpdateNavigationComponent } from './game-update-navigation.component';
 
 
 
 @NgModule({
-  declarations: [ GameUpdateComponent],
+  declarations: [ GameUpdateNavigationComponent],
   imports: [
     CommonModule,
     MaterialModule
   ]
 })
-export class GameUpdateModule { }
+export class GameUpdateNavigationModule { }

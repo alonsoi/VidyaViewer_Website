@@ -11,4 +11,4 @@ import { GamesListComponent } from '../../games-list/games-list.component';
     CommonModule
   ]
 })
-export class ProductionCompaniesModule { }
+export class DevelopersModule { }

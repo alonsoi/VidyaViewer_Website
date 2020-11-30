@@ -6,8 +6,8 @@ import { ThemesListComponent } from './modules/themes-list/themes-list.component
 import { ThemesComponent } from './modules/themes-list/themes/themes.component';
 import { GamesListComponent } from './modules/games-list/games-list.component';
 import { GamesComponent } from './modules/games-list/games/games.component';
-import { ProductionCompaniesListComponent } from './modules/production-companies-list/production-companies-list.component';
-import { ProductionCompaniesComponent } from './modules/production-companies-list/production-companies/production-companies.component';
+import { DevelopersListComponent } from './modules/developers-list/developers-list.component';
+import { DevelopersComponent } from './modules/developers-list/developers/developers.component';
 import { VendorsListComponent } from './modules/vendors-list/vendors-list.component';
 import { VendorsComponent } from './modules/vendors-list/vendors/vendors.component';
 
@@ -44,11 +44,11 @@ const routes: Routes =
       },
       {
         path: 'production_companies-list',
-        component: ProductionCompaniesListComponent,
+        component: DevelopersListComponent,
         children: [
           {
             path: 'production_company-specific',
-            component: ProductionCompaniesComponent
+            component: DevelopersComponent
           }
         ]
       },

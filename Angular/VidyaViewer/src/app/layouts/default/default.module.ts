@@ -9,8 +9,8 @@ import { ThemesListComponent } from '../../modules/themes-list/themes-list.compo
 import { ThemesComponent } from '../../modules/themes-list/themes/themes.component';
 import { GamesListComponent } from '../../modules/games-list/games-list.component';
 import { GamesComponent } from '../../modules/games-list/games/games.component';
-import { ProductionCompaniesListComponent } from 'src/app/modules/production-companies-list/production-companies-list.component';
-import { ProductionCompaniesComponent } from 'src/app/modules/production-companies-list/production-companies/production-companies.component';
+import { DevelopersListComponent } from 'src/app/modules/developers-list/developers-list.component';
+import { DevelopersComponent } from 'src/app/modules/developers-list/developers/developers.component';
 import { VendorsListComponent } from 'src/app/modules/vendors-list/vendors-list.component';
 import { VendorsComponent } from 'src/app/modules/vendors-list/vendors/vendors.component';
 
@@ -24,8 +24,8 @@ import { VendorsComponent } from 'src/app/modules/vendors-list/vendors/vendors.c
     ThemesComponent,
     GamesListComponent,
     GamesComponent,
-    ProductionCompaniesListComponent,
-    ProductionCompaniesComponent,
+    DevelopersListComponent,
+    DevelopersComponent,
     VendorsListComponent,
     VendorsComponent
   ],

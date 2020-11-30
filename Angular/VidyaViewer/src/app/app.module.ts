@@ -8,16 +8,17 @@ import { SignUpComponent } from './modules/sign-up/sign-up.component';
 import { LoginComponent } from './modules/login/login.component';
 import { AdminLoginComponent } from './modules/admin/admin-login/admin-login.component';
 import { MaterialModule} from './shared/material/material.module';
-import { GameUpdateComponent } from './modules/admin/AdminUpdates/game-update/game-update.component';
-import { ProductionCompaniesUpdateComponent } from './modules/admin/AdminUpdates/production-companies-update/production-companies-update.component';
+import { GameUpdateNavigationComponent } from './modules/admin/AdminUpdates/game-update-navigation/game-update-navigation.component';
 import { ThemeUpdateComponent } from './modules/admin/AdminUpdates/theme-update/theme-update.component';
+import { DevelopersUpdateNavigationComponent } from './modules/admin/AdminUpdates/developers-update-navigatioin/developers-update-navigation.component';
 import { VendorsUpdateComponent } from './modules/admin/AdminUpdates/vendors-update/vendors-update.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    GameUpdateComponent,
-    ProductionCompaniesUpdateComponent,
+    GameUpdateNavigationComponent,
+    DevelopersUpdateNavigationComponent,
     ThemeUpdateComponent,
     VendorsUpdateComponent,    
   ],
@@ -34,8 +35,8 @@ import { VendorsUpdateComponent } from './modules/admin/AdminUpdates/vendors-upd
     SignUpComponent,
     LoginComponent,
     AdminLoginComponent,
-    GameUpdateComponent,
-    ProductionCompaniesUpdateComponent,
+    GameUpdateNavigationComponent,
+    DevelopersUpdateNavigationComponent,
     ThemeUpdateComponent,
     VendorsUpdateComponent
   ]
