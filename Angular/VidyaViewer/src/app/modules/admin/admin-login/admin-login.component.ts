@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminLoginService } from 'src/app/shared/Services/login/admin-login/admin-login.service';
+import { AdminLoginService } from 'src/app/shared/Services/FormServices/UserForms/login/admin-login/admin-login.service';
 
 @Component({
   selector: 'app-admin-login',

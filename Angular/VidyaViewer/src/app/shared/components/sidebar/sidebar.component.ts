@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatDialogConfig } from '@angular/material/dialog/dialog-config';
-import { ThemeUpdateComponent } from 'src/app/modules/admin/AdminUpdates/theme-update/theme-update.component';
-import { DevelopersUpdateNavigationComponent } from 'src/app/modules/admin/AdminUpdates/developers-update-navigatioin/developers-update-navigation.component';
-import { VendorsUpdateComponent } from 'src/app/modules/admin/AdminUpdates/vendors-update/vendors-update.component';
+import { ThemeUpdateNavigationComponent } from 'src/app/modules/admin/AdminUpdates/theme-update-navigation/theme-update-navigation.component';
+import { DevelopersUpdateNavigationComponent } from 'src/app/modules/admin/AdminUpdates/developers-update-navigation/developers-update-navigation.component';
+import { VendorsUpdateNavigationComponent } from 'src/app/modules/admin/AdminUpdates/vendors-update-navigation/vendors-update-navigation.component';
 import { GameUpdateNavigationComponent } from 'src/app/modules/admin/AdminUpdates/game-update-navigation/game-update-navigation.component';
 
 
@@ -22,7 +22,7 @@ export class SidebarComponent implements OnInit {
 
   onThemesUpdate()
   {
-    const themesDialogRef= this.themesUpdateDialog.open(ThemeUpdateComponent, {
+    const themesDialogRef= this.themesUpdateDialog.open(ThemeUpdateNavigationComponent, {
       width: '500px'});
 
     themesDialogRef.afterClosed().subscribe(result => {
@@ -42,7 +42,7 @@ export class SidebarComponent implements OnInit {
 
   onVendorsUpdate()
   {
-    const vendorsDialogRef= this.vendorsUpdateDialog.open(VendorsUpdateComponent, {
+    const vendorsDialogRef= this.vendorsUpdateDialog.open(VendorsUpdateNavigationComponent, {
       width: '500px'});
 
     vendorsDialogRef.afterClosed().subscribe(result => {

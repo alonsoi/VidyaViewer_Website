@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../shared/Services/login/login.service';
+import { LoginService } from '../../shared/Services/FormServices/UserForms/login/login.service';
 import { MatDialog } from '@angular/material/dialog';
 import { SignUpComponent } from '../sign-up/sign-up.component';
 

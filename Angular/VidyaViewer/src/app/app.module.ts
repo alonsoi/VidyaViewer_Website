@@ -9,9 +9,10 @@ import { LoginComponent } from './modules/login/login.component';
 import { AdminLoginComponent } from './modules/admin/admin-login/admin-login.component';
 import { MaterialModule} from './shared/material/material.module';
 import { GameUpdateNavigationComponent } from './modules/admin/AdminUpdates/game-update-navigation/game-update-navigation.component';
-import { ThemeUpdateComponent } from './modules/admin/AdminUpdates/theme-update/theme-update.component';
-import { DevelopersUpdateNavigationComponent } from './modules/admin/AdminUpdates/developers-update-navigatioin/developers-update-navigation.component';
-import { VendorsUpdateComponent } from './modules/admin/AdminUpdates/vendors-update/vendors-update.component';
+import { ThemeUpdateNavigationComponent } from './modules/admin/AdminUpdates/theme-update-navigation/theme-update-navigation.component';
+import { DevelopersUpdateNavigationComponent } from './modules/admin/AdminUpdates/developers-update-navigation/developers-update-navigation.component';
+import { VendorsUpdateNavigationComponent } from './modules/admin/AdminUpdates/vendors-update-navigation/vendors-update-navigation.component';
+
 
 
 @NgModule({
@@ -19,8 +20,9 @@ import { VendorsUpdateComponent } from './modules/admin/AdminUpdates/vendors-upd
     AppComponent,
     GameUpdateNavigationComponent,
     DevelopersUpdateNavigationComponent,
-    ThemeUpdateComponent,
-    VendorsUpdateComponent,    
+    ThemeUpdateNavigationComponent,
+    VendorsUpdateNavigationComponent,
+      
   ],
   imports: [
     BrowserModule,
@@ -36,9 +38,9 @@ import { VendorsUpdateComponent } from './modules/admin/AdminUpdates/vendors-upd
     LoginComponent,
     AdminLoginComponent,
     GameUpdateNavigationComponent,
+    ThemeUpdateNavigationComponent,
     DevelopersUpdateNavigationComponent,
-    ThemeUpdateComponent,
-    VendorsUpdateComponent
+    VendorsUpdateNavigationComponent
   ]
 })
 export class AppModule { }

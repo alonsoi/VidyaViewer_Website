@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SignUpService } from '../../shared/Services/sign-up/sign-up.service';
+import { SignUpService } from '../../shared/Services/FormServices/UserForms/sign-up/sign-up.service';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
