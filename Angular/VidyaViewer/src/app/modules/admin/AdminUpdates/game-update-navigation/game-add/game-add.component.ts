@@ -14,7 +14,8 @@ export class GameAddComponent implements OnInit {
   formGameAdd= this.gameAddFB.group({
     gameName: ['', Validators.required],
     platformType: ['', Validators.required],
-    gameDescription: ['', Validators.required]
+    gameDescription: ['', Validators.required],
+    gameDeveloper: ['', Validators.required]
   })
 
   ngOnInit(): void {
