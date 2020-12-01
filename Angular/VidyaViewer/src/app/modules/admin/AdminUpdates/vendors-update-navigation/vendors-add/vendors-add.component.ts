@@ -14,8 +14,13 @@ export class VendorsAddComponent implements OnInit {
   formVendorsAdd= this.vendorsAddFB.group({
     vendorName: ['', Validators.required],
     vendorDescription: ['', Validators.required],
+    vendorAddress: this.vendorsAddFB.group({
+      street: [''],
+      state: [''],
+      zip: ['']
+    })
     //currentAssociatedGames: []
-  })
+  });
   ngOnInit(): void {
   }
 

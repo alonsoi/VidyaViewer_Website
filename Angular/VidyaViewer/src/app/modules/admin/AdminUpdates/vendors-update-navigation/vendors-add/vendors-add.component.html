@@ -9,30 +9,21 @@
             <input formControlName="vendorDescription" class="area-size" matInput placeholder= "Add Vendor Description Here">
             <mat-error> cannot be left blank</mat-error>
         </mat-form-field>
-        <!-- Error with Display of Dialog upon inclusion of subform-->
-        <!--<form [formGroup]="vendorsAddServ.formVendorAddressAdd" class= "normal-form">
-            <h3>{{"Address:"}}</h3>
-            <input type= "hidden" formControlName="$vendorAddressKey">
+        <h3> Add Vendor Address </h3>
+        <div formGroupName= "vendorsAddress" style="padding:15px;">
             <mat-form-field>
-                <input formControlName="streetAddress" matInput placeholder= "Add Street Address">
-                <mat-error> cannot be left blank</mat-error>
+                <input formControlName="street" matInput placeholder= "Street Address:">
             </mat-form-field>
             <mat-form-field>
-                <input formControlName="city" matInput placeholder= "city">
-                <mat-error> cannot be left blank</mat-error>
+                <input formControlName="city" matInput placeholder= "City:">
             </mat-form-field>
-                        <mat-form-field>
-                <input formControlName="zip" matInput placeholder= "zip">
-                <mat-error> cannot be left blank</mat-error>
+            <mat-form-field>
+                <input formControlName="zip" matInput placeholder= "zip:">
             </mat-form-field>
-
-        <div class= "button-row">
-            <button mat-raised-button color="primary" type= "submit" [disabled]="vendorsAddServ.formVendorAddressAdd.invalid">Add Location</button>
-
+            <div class= "button-row">
+                <button mat-flat-button type= "submit">Add</button>
+            </div>
         </div>
-
-            
-        </form>-->
 
         <div class= "button-row">
             <button mat-raised-button color="primary" type= "submit" [disabled]="formVendorsAdd.invalid"> Submit</button>
