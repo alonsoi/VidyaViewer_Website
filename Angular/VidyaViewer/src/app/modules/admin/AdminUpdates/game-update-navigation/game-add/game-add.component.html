@@ -19,6 +19,10 @@
             </mat-select>
             <mat-error> cannot be left blank</mat-error>
         </mat-form-field>-->
+        <mat-form-field>
+            <input formControlName="gameDeveloper" matInput placeholder="Development Company Name">
+                <mat-error> cannot be left blank</mat-error>
+        </mat-form-field>
 
         <div class= "button-row">
             <button mat-raised-button color="primary" type= "submit" [disabled]="formGameAdd.invalid"> Submit</button>
