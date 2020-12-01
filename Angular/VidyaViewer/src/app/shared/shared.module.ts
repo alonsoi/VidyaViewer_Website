@@ -10,6 +10,7 @@ import { LoginComponent } from '../modules/login/login.component';
 import { AdminLoginComponent } from '../modules/admin/admin-login/admin-login.component';
 import { SignUpComponent } from '../modules/sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ThemeAddComponent } from '../modules/admin/AdminUpdates/theme-update-navigation/theme-add/theme-add.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SignUpComponent,
     LoginComponent,
     AdminLoginComponent,
+    ThemeAddComponent
   ],
 
   imports: [
@@ -37,6 +39,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SignUpComponent,
     LoginComponent,
     AdminLoginComponent,
+    ThemeAddComponent
   ]
 })
 export class SharedModule { }

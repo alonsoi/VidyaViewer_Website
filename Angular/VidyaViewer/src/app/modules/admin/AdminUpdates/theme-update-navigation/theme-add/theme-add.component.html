@@ -1,1 +1,19 @@
-<p>theme-add works!</p>
+<form [formGroup]="themeAddServ.formThemeAdd" class= "normal-form">
+    <div class= "controls-container">
+        <h2>{{themeAdd}}</h2>
+        <input type= "hidden" formControlName="$themeAddKey">
+        <mat-form-field>
+            <input formControlName="themeName" matInput placeholder= "Add Theme Title Here">
+            <mat-error> cannot be left blank</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="themeDescription" matInput placeholder= "Add Theme Description Here">
+            <mat-error> cannot be left blank</mat-error>
+        </mat-form-field>
+
+        <div class= "button-row">
+            <button mat-raised-button color="primary" type= "submit" [disabled]="themeAddServ.formThemeAdd.invalid"> Submit</button>
+            <button mat-raised-button type="basic" (click)="onCancel()"> Cancel</button>
+        </div>
+    </div>
+</form>
