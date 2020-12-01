@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThemeUpdateService } from 'src/app/shared/Services/FormServices/AdminUpdateForms/theme/theme-update/theme-update.service';
 
 @Component({
   selector: 'app-theme-update',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThemeUpdateComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public themeUpdateServ: ThemeUpdateService) { }
+  themeUpdate: string= "value passed from Database Update";
   ngOnInit(): void {
+  }
+
+  onCancel()
+  {
+    this.themeUpdateServ.formThemeUpdate.reset();
+    this.themeUpdateServ.initializeFormGroup();
   }
 
 }

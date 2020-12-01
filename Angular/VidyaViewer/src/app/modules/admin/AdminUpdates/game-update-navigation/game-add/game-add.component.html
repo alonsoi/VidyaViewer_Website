@@ -1,1 +1,29 @@
-<p>game-add works!</p>
+<form [formGroup]="gameAddServ.formGameAdd" class= "normal-form">
+    <div class= "controls-container">
+        <h2>{{gameAdd}}</h2>
+        <input type= "hidden" formControlName="$gameAddKey">
+        <mat-form-field>
+            <input formControlName="gameName" matInput placeholder= "Add Game Title Here">
+            <mat-error> cannot be left blank</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="platformType" matInput placeholder= "Add platform type Here">
+            <mat-error> cannot be left blank</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="gameDescription" matInput placeholder= "Add Game Description Here">
+            <mat-error> cannot be left blank</mat-error>
+        </mat-form-field>
+        <!--<mat-form-field>
+            <mat-select formControlName="associatedTheme" matInput placeholder= "select a theme associated with the game">
+                <mat-option> none</mat-option> <- this throws an error 
+            </mat-select>
+            <mat-error> cannot be left blank</mat-error>
+        </mat-form-field>-->
+
+        <div class= "button-row">
+            <button mat-raised-button color="primary" type= "submit" [disabled]="gameAddServ.formGameAdd.invalid"> Submit</button>
+            <button mat-raised-button type="basic" (click)="onCancel()"> Cancel</button>
+        </div>
+    </div>
+</form>
