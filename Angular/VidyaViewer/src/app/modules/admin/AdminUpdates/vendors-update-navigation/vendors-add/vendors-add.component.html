@@ -1,4 +1,4 @@
-<form [formGroup]="vendorsAddServ.formVendorAdd" class= "normal-form">
+<form [formGroup]="formVendorsAdd" class= "normal-form">
     <div class= "controls-container">
         <h2>{{vendorsAdd}}</h2>
         <input type= "hidden" formControlName="$vendorAddKey">
@@ -36,8 +36,8 @@
         </form>-->
 
         <div class= "button-row">
-            <button mat-raised-button color="primary" type= "submit" [disabled]="vendorsAddServ.formVendorAdd.invalid"> Submit</button>
-            <button mat-raised-button type="basic" (click)="onCancel()"> Cancel</button>
+            <button mat-raised-button color="primary" type= "submit" [disabled]="formVendorsAdd.invalid"> Submit</button>
+            <button mat-raised-button type="reset" (click)="onCancel()"> Cancel</button>
         </div>
     </div>
 </form>

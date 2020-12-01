@@ -1,7 +1,6 @@
-<form [formGroup]="gameAddServ.formGameAdd" class= "normal-form">
+<form [formGroup]="formGameAdd" class= "normal-form">
     <div class= "controls-container">
         <h2>{{gameAdd}}</h2>
-        <input type= "hidden" formControlName="$gameAddKey">
         <mat-form-field>
             <input formControlName="gameName" matInput placeholder= "Add Game Title Here">
             <mat-error> cannot be left blank</mat-error>
@@ -11,7 +10,7 @@
             <mat-error> cannot be left blank</mat-error>
         </mat-form-field>
         <mat-form-field>
-            <input formControlName="gameDescription" matInput placeholder= "Add Game Description Here">
+            <input formControlName="gameDescription" class="area-size" matInput placeholder= "Add Game Description Here">
             <mat-error> cannot be left blank</mat-error>
         </mat-form-field>
         <!--<mat-form-field>
@@ -22,8 +21,8 @@
         </mat-form-field>-->
 
         <div class= "button-row">
-            <button mat-raised-button color="primary" type= "submit" [disabled]="gameAddServ.formGameAdd.invalid"> Submit</button>
-            <button mat-raised-button type="basic" (click)="onCancel()"> Cancel</button>
+            <button mat-raised-button color="primary" type= "submit" [disabled]="formGameAdd.invalid"> Submit</button>
+            <button mat-raised-button type="reset" (click)="onCancel()"> Cancel</button>
         </div>
     </div>
 </form>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ThemeAddService } from 'src/app/shared/Services/FormServices/AdminUpdateForms/theme/theme-add/theme-add.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-theme-add',
@@ -8,16 +8,22 @@ import { ThemeAddService } from 'src/app/shared/Services/FormServices/AdminUpdat
 })
 export class ThemeAddComponent implements OnInit {
 
-  constructor(public themeAddServ: ThemeAddService) { }
-
+  //constructor(public themeAddServ: ThemeAddService) { }
   themeAdd: string= "Add New Theme";
+  
+  constructor(private themeAddFB: FormBuilder){ }
+  formThemeAdd= this.themeAddFB.group({
+    themeName:['', Validators.required],
+    themeDescription: ['', Validators.required]
+  })
   ngOnInit(): void {
   }
 
   onCancel()
   {
-    this.themeAddServ.formThemeAdd.reset();
-    this.themeAddServ.initializeFormGroup();
+    //this.themeAddServ.formThemeAdd.reset();
+    //this.themeAddServ.initializeFormGroup();
+    this.formThemeAdd.reset();
   }
 
 }

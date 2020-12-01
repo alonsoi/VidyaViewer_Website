@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VendorsAddService } from 'src/app/shared/Services/FormServices/AdminUpdateForms/vendors/vendors-add/vendors-add.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-vendors-add',
@@ -8,16 +8,20 @@ import { VendorsAddService } from 'src/app/shared/Services/FormServices/AdminUpd
 })
 export class VendorsAddComponent implements OnInit {
 
-  constructor(public vendorsAddServ: VendorsAddService) { }
-
   vendorsAdd: string= "Add new Vendors";
+  
+  constructor(private vendorsAddFB: FormBuilder) { }
+  formVendorsAdd= this.vendorsAddFB.group({
+    vendorsName: ['', Validators.required],
+    vendorsDescription: ['', Validators.required],
+    currentAssociatedGames: []
+  })
   ngOnInit(): void {
   }
 
   onCancel()
   {
-    this.vendorsAddServ.formVendorAdd.reset();
-    this.vendorsAddServ.initializeFormGroup();
+    this.formVendorsAdd.reset();
   }
 
 }

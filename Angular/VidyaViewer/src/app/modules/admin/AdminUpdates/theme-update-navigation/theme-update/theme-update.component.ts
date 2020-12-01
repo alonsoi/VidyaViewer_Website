@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ThemeUpdateService } from 'src/app/shared/Services/FormServices/AdminUpdateForms/theme/theme-update/theme-update.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-theme-update',
@@ -8,15 +8,21 @@ import { ThemeUpdateService } from 'src/app/shared/Services/FormServices/AdminUp
 })
 export class ThemeUpdateComponent implements OnInit {
 
-  constructor(public themeUpdateServ: ThemeUpdateService) { }
+  
   themeUpdate: string= "value passed from Database Update";
+
+  constructor(private themeUpdateFB: FormBuilder) { }
+  formThemeUpdate= this.themeUpdateFB.group({
+    themeName:['', Validators.required],
+    themeDescription: ['', Validators.required],
+    currentAssociatedGames: []
+  })
   ngOnInit(): void {
   }
 
   onCancel()
   {
-    this.themeUpdateServ.formThemeUpdate.reset();
-    this.themeUpdateServ.initializeFormGroup();
+    this.formThemeUpdate.reset();
   }
 
 }
