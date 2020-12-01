@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-//import { GameAddService } from 'src/app/shared/Services/FormServices/AdminUpdateForms/games/game-add/game-add.service';
 
 @Component({
   selector: 'app-game-add',
@@ -9,7 +8,6 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class GameAddComponent implements OnInit {
 
-  //constructor(public gameAddServ: GameAddService) { }
   gameAdd: string="Add new Game";
 
   constructor(private gameAddFB: FormBuilder) { }

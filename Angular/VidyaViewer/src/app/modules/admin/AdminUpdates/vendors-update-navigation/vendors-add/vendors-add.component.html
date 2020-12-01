@@ -1,13 +1,12 @@
 <form [formGroup]="formVendorsAdd" class= "normal-form">
     <div class= "controls-container">
         <h2>{{vendorsAdd}}</h2>
-        <input type= "hidden" formControlName="$vendorAddKey">
         <mat-form-field>
-            <input formControlName="vendorName" matInput placeholder= "Add Theme Title Here">
+            <input formControlName="vendorName" matInput placeholder= "Add Vendor Title Here">
             <mat-error> cannot be left blank</mat-error>
         </mat-form-field>
         <mat-form-field>
-            <input formControlName="vendorDescription" matInput placeholder= "Add Theme Description Here">
+            <input formControlName="vendorDescription" class="area-size" matInput placeholder= "Add Vendor Description Here">
             <mat-error> cannot be left blank</mat-error>
         </mat-form-field>
         <!-- Error with Display of Dialog upon inclusion of subform-->

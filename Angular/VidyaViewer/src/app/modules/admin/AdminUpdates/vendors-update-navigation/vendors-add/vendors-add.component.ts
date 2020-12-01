@@ -12,9 +12,9 @@ export class VendorsAddComponent implements OnInit {
   
   constructor(private vendorsAddFB: FormBuilder) { }
   formVendorsAdd= this.vendorsAddFB.group({
-    vendorsName: ['', Validators.required],
-    vendorsDescription: ['', Validators.required],
-    currentAssociatedGames: []
+    vendorName: ['', Validators.required],
+    vendorDescription: ['', Validators.required],
+    //currentAssociatedGames: []
   })
   ngOnInit(): void {
   }
