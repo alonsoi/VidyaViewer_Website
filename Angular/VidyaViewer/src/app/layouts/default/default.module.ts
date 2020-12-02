@@ -13,7 +13,10 @@ import { DevelopersListComponent } from 'src/app/modules/developers-list/develop
 import { DevelopersComponent } from 'src/app/modules/developers-list/developers/developers.component';
 import { VendorsListComponent } from 'src/app/modules/vendors-list/vendors-list.component';
 import { VendorsComponent } from 'src/app/modules/vendors-list/vendors/vendors.component';
-
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
@@ -35,6 +38,10 @@ import { VendorsComponent } from 'src/app/modules/vendors-list/vendors/vendors.c
     RouterModule,
     SharedModule,
     MatSidenavModule,
+    MatGridListModule,
+    MatCardModule,
+    MatListModule,
+    MatExpansionModule
   ]
 })
 export class DefaultModule { }

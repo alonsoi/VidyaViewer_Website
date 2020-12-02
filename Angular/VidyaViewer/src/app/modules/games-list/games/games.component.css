@@ -1,0 +1,21 @@
+.game-details{
+    padding:30px;
+}
+
+.image
+{
+    padding: 30px;
+    height: auto;
+}
+.card
+{
+    margin-top: 2rem;
+    height: 100%;
+    width: 560px;
+}
+
+.expanding-vendors{
+    padding: 25px;
+    padding-left: 5%;
+    padding-bottom: 30px;
+}

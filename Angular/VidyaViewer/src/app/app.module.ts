@@ -12,6 +12,7 @@ import { GameUpdateNavigationComponent } from './modules/admin/AdminUpdates/game
 import { ThemeUpdateNavigationComponent } from './modules/admin/AdminUpdates/theme-update-navigation/theme-update-navigation.component';
 import { DevelopersUpdateNavigationComponent } from './modules/admin/AdminUpdates/developers-update-navigation/developers-update-navigation.component';
 import { VendorsUpdateNavigationComponent } from './modules/admin/AdminUpdates/vendors-update-navigation/vendors-update-navigation.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 
@@ -29,7 +30,8 @@ import { VendorsUpdateNavigationComponent } from './modules/admin/AdminUpdates/v
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
-    MaterialModule
+    MaterialModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent],

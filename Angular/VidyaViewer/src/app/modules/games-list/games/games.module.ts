@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GamesComponent } from './games/games.component';
+import { GamesComponent } from './games.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
     CommonModule,
     MatGridListModule,
     MatCardModule,
-    MatButtonModule
+    MatListModule,
+    MatExpansionModule,
   ]
 })
-export class GamesListModule { }
+export class GamesModule { }
