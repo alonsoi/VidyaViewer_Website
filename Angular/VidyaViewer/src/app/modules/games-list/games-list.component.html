@@ -1,5 +1,27 @@
 <p>games-list works!</p>
 <hr>
+
+<!--NgFor if game exists, replicate card structure, with specific game attributes-->
+<mat-card>
+    <mat-card-title> Game name </mat-card-title>
+        <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of Game">
+        <mat-card-content> This is a description for the game associated, click view more to see game description </mat-card-content>
+        <mat-card-actions>
+            <button mat-flat-button color="primary"> View </button>
+        </mat-card-actions>
+</mat-card>
+<mat-card>
+    <mat-card-title> Game name </mat-card-title>
+        <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of Game">
+        <mat-card-content> This is a description for the game associated, click view more to see game description </mat-card-content>
+        <mat-card-actions>
+            <button mat-flat-button color="primary"> View </button>
+        </mat-card-actions>
+</mat-card>
+<!--end of NgFor-->
+<!--breakline for style display-->
+<br>
+
 <!--<mat-grid-list cols="2">
     <mat-grid-tile>
         <mat-card>
@@ -21,6 +43,6 @@
             </mat-card-actions>
         </mat-card>
     </mat-grid-tile>
-</mat-grid-list>-->
+</mat-grid-list>
 <hr>
-<app-games></app-games>
+<!--<app-games></app-games>-->
