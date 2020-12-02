@@ -1,2 +1,60 @@
 <p>vendors works!</p>
-<app-games-list></app-games-list>
+<hr>
+<mat-grid-list cols="2">
+    <mat-grid-tile>
+        <mat-card class="card">
+            <div class="image">   
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of Game">
+            </div>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div class= "vendor-details">
+            <mat-list>
+                <mat-list-item> Vendor Name</mat-list-item>
+                <br> 
+                <mat-list-item>
+                    <h3 mat-line>Description:</h3>
+                    <p mat-line>
+                        Here at GameStop we like to exchange back for your games a 3rd of the price.
+                        We have poor customer service, and it shows, but don't let that stop you from
+                        letting us take advantage of all you have to offer.
+                    </p>
+                 </mat-list-item>
+            </mat-list>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+<div class="expanding-games">
+    <mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Associated Games
+            </mat-panel-title>
+            <mat-panel-description>
+                Listing of Games Associated with this theme
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+           <app-games-list></app-games-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Associated locations
+            </mat-panel-title>
+            <mat-panel-description>
+                Where you can find us
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+           <!--NgFor to populate a listing of street names-->
+           <div>
+                103 RandomStreet Spartanburg SC, 29833.
+           </div>
+           <div>
+                123 RandomStreet Greer SC, 29833.
+           </div>
+    </mat-expansion-panel>
+    </mat-accordion>
+</div>
+<br>

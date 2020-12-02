@@ -1,3 +1,41 @@
-<p>developers works!</p>
+<p>production-company works!</p>
 <hr>
-<app-games-list></app-games-list>
+<!--<app-games-list></app-games-list>-->
+<mat-grid-list cols="2">
+    <mat-grid-tile>
+        <mat-card class="card">
+            <div class="image">   
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of Game">
+            </div>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div class= "developer-details">
+            <mat-list>
+                <mat-list-item> Production Company Name</mat-list-item>
+                <br> 
+                <mat-list-item>
+                    <h3 mat-line>Description:</h3>
+                    <p mat-line>
+                        EmulateMe is a development company specializing in all things related to game simulators.
+                        They work hard to provide you the most life-like experience when it comes to simulating new reality.
+                        Known for classics such as rock emulator, and bird emulator. 
+                    </p>
+                 </mat-list-item>
+            </mat-list>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+<div class="expanding-games">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Associated Games
+            </mat-panel-title>
+            <mat-panel-description>
+                Listing of Games Associated with this theme
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+           <app-games-list></app-games-list>
+    </mat-expansion-panel>
+</div>
