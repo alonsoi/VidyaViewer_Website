@@ -1,3 +1,24 @@
-<p>vendors-list works!</p>
-<hr>
-<app-vendors></app-vendors>
+<!--NgFor if Vendor exists, replicate card structure, with specific vendor attributes-->
+<mat-card>
+    <!--requires API connection for Vendor.name-->
+    <mat-card-title> Vendor name </mat-card-title>
+        <!--requires API connection for Vendor.image-->
+        <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of Vendor">
+        <!--requires API connection for Vendor.description-->
+        <mat-card-content> This is a description for the Vendor associated, click view more to see game description </mat-card-content>
+        <mat-card-actions>
+            <!--requires API connection to route to specific Vendor page by ID association-->
+            <button mat-flat-button color="primary"> View </button>
+        </mat-card-actions>
+</mat-card>
+<mat-card>
+    <mat-card-title> Vendor name </mat-card-title>
+        <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of Vendor">
+        <mat-card-content> This is a description for the Vendor associated, click view more to see Vendor description </mat-card-content>
+        <mat-card-actions>
+            <button mat-flat-button color="primary"> View </button>
+        </mat-card-actions>
+</mat-card>
+<!--end of NgFor-->
+<!--breakline for style display-->
+<br>

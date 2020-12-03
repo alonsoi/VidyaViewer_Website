@@ -3,6 +3,11 @@
 <button mat-raised-button color="primary" (click)="onAddTheme()"> Add New Theme</button>
 </mat-grid-tile>
 <mat-grid-tile>
-Select an existing theme to edit
-</mat-grid-tile>
+<!--reqires API connectivity to retrieve listing of themes-->
+<!--<mat-select> 
+        <mat-option> None </mat-option>
+        <mat-option *NgFor let game of gameArray" value= "themeName.value"</mat-option>
+    </mat-select>
+    <button mat-raised-button color="primary" (click)= "onUpdateTheme()">Update Theme</button>
+--></mat-grid-tile>
 </mat-grid-list>

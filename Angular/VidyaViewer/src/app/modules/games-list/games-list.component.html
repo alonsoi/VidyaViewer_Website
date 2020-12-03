@@ -1,12 +1,18 @@
 <p>games-list works!</p>
 <hr>
 
-<!--NgFor if game exists, replicate card structure, with specific game attributes-->
+<!--*NgFor if game exists, replicate card structure, with specific game attributes-->
+<!--requires API connection with Array to display listing-->
+
 <mat-card>
+    <!--requires API connection for game.name-->
     <mat-card-title> Game name </mat-card-title>
+        <!--requires API connection for game.image-->
         <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of Game">
+        <!--requires API connection for game.description-->
         <mat-card-content> This is a description for the game associated, click view more to see game description </mat-card-content>
         <mat-card-actions>
+            <!--requires API connection to route to specific game page by ID association-->
             <button mat-flat-button color="primary"> View </button>
         </mat-card-actions>
 </mat-card>
@@ -15,34 +21,11 @@
         <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of Game">
         <mat-card-content> This is a description for the game associated, click view more to see game description </mat-card-content>
         <mat-card-actions>
-            <button mat-flat-button color="primary"> View </button>
+            <!--requires API connection to route to specific game page by ID association-->
+            <button mat-flat-button color="primary"> View </button> 
         </mat-card-actions>
 </mat-card>
 <!--end of NgFor-->
 <!--breakline for style display-->
 <br>
 
-<!--<mat-grid-list cols="2">
-    <mat-grid-tile>
-        <mat-card>
-            <mat-card-title> Game name </mat-card-title>
-            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of Game">
-            <span> This is a description for the game associated </span>
-            <mat-card-actions>
-                <button mat-flat-button color="primary"> View </button>
-            </mat-card-actions>
-        </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <mat-card>
-            <mat-card-title> Game name </mat-card-title>
-            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of Game">
-            <span> This is a description for the game associated </span>
-            <mat-card-actions>
-                <button mat-flat-button color="primary" (click)="goToPage('game-list/game')"> View </button>
-            </mat-card-actions>
-        </mat-card>
-    </mat-grid-tile>
-</mat-grid-list>
-<hr>
-<!--<app-games></app-games>-->

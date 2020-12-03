@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { VendorsAddComponent } from './vendors-add/vendors-add.component';
 
+interface vendorArray{
+  vendorName: string;
+  vendorDescription: string;
+  gamesAssociated: string;
+}
 @Component({
   selector: 'app-vendors-update-navigation',
   templateUrl: './vendors-update-navigation.component.html',
@@ -9,7 +14,8 @@ import { VendorsAddComponent } from './vendors-add/vendors-add.component';
 })
 export class VendorsUpdateNavigationComponent implements OnInit {
 
-  constructor(public addVendorDialog: MatDialog) { }
+  vendor: vendorArray[]=[];
+  constructor(public addVendorDialog: MatDialog, public updateVendorDialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +28,17 @@ export class VendorsUpdateNavigationComponent implements OnInit {
 
     addVendorDialog.afterOpened().subscribe(result =>{
       console.log('Add Vendor Dialog opened');
+    })
+  }
+
+  onUpdateVendor()
+  {
+    const updateVendorDialog= this.updateVendorDialog.open(VendorsAddComponent, {
+      width: "500px"
+    });
+
+    updateVendorDialog.afterOpened().subscribe(result => {
+      console.log('Add Game Dialog opened');
     })
   }
 

@@ -3,6 +3,11 @@
 <button mat-raised-button color="primary" (click)= "onAddVendor()"> Add New Vendor</button>
 </mat-grid-tile>
 <mat-grid-tile>
-Select an existing vendor to edit
+<!--reqires API connectivity to retrieve listing of Vendors-->
+<!--<mat-select> 
+        <mat-option> None </mat-option>
+        <mat-option *NgFor let vendors of vendorsArray" value= "vendorName.value"</mat-option>
+    </mat-select>
+    <button mat-raised-button color="primary" (click)= "onUpdateVendor()">Update Vendor</button>
 </mat-grid-tile>
 </mat-grid-list>

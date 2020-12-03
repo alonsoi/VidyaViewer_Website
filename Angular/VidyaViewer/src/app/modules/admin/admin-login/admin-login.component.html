@@ -11,6 +11,7 @@
             <mat-error> cannot be left blank</mat-error>
         </mat-form-field>
  
+        <!--require API functionality to submit form information-->
         <div class="button-row">
             <button mat-raised-button color="primary" type= "submit" [disabled]="adminLoginServ.formAdminLogin.invalid"> Submit</button>
             <button mat-raised-button type="basic" (click)="onCancel()"> Cancel</button>

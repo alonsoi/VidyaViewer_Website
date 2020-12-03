@@ -1,0 +1,11 @@
+mat-card {
+    width: calc(100% - 70px);
+    height: calc(100% - 25px);
+  }
+
+.breif-description{
+  align-self:center;
+  width: 3em;
+  word-wrap: break-word;
+  white-space: normal;
+}
