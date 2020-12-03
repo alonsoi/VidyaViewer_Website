@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ThemeAddComponent } from './theme-add/theme-add.component';
-import { ThemeUpdateComponent } from './theme-update/theme-update.component';
+//import { ThemeUpdateComponent } from './theme-update/theme-update.component';
 
 interface themeArray{
   themeName: string;
@@ -33,7 +33,7 @@ export class ThemeUpdateNavigationComponent implements OnInit {
     })
   }
 
-  onUpdateTheme()
+ /** onUpdateTheme()
   {
     const updateThemeDialog= this.updateThemeDialog.open(ThemeUpdateComponent, {
       width: "500px"
@@ -42,6 +42,6 @@ export class ThemeUpdateNavigationComponent implements OnInit {
     updateThemeDialog.afterOpened().subscribe(result => {
       console.log('Add Game Dialog opened');
     })
-  }
+  } */
 
 }

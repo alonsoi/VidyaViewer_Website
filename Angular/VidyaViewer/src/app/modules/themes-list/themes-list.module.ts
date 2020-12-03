@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ThemesComponent } from './themes/themes.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -8,7 +9,7 @@ import { ThemesComponent } from './themes/themes.component';
     ThemesComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ]
 })
 export class ThemesListModule { }

@@ -4,6 +4,7 @@ import { MaterialModule } from 'src/app/shared/material/material.module';
 import { GameUpdateNavigationComponent } from './game-update-navigation.component';
 import { GameAddComponent } from './game-add/game-add.component';
 import { GameUpdateComponent } from './game-update/game-update.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -11,7 +12,8 @@ import { GameUpdateComponent } from './game-update/game-update.component';
   declarations: [ GameUpdateNavigationComponent, GameAddComponent, GameUpdateComponent],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    MatSelectModule
   ]
 })
 export class GameUpdateNavigationModule { }

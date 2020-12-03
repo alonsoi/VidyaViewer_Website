@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { GameAddComponent } from './game-add/game-add.component';
-import { GameUpdateComponent } from './game-update/game-update.component';
+//import { GameUpdateComponent } from './game-update/game-update.component';
 
 interface gameArray{
   gameName: string;
@@ -36,7 +36,7 @@ export class GameUpdateNavigationComponent implements OnInit {
     })
   }
 
-  onUpdateGame()
+  /**onUpdateGame()
   {
     const updateGameDialog= this.updateGameDialog.open(GameUpdateComponent, {
       width: "500px"
@@ -45,5 +45,5 @@ export class GameUpdateNavigationComponent implements OnInit {
     updateGameDialog.afterOpened().subscribe(result => {
       console.log('Add Game Dialog opened');
     })
-  }
+  } */
 }
