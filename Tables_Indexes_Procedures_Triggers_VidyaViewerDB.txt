@@ -1,0 +1,157 @@
+--Author: Eli Hughes
+--Purpose: All SQL Table Statements, Indexes, Procedures, and Triggers for VidyaViewerDB
+
+
+CREATE OR REPLACE TABLE Rating (
+	id int IDENTITY(1,1) PRIMARY KEY,
+	ratingImage varchar(100),
+	info text
+);
+
+CREATE OR REPLACE TABLE Game (
+	id int IDENTITY(1,1) PRIMARY KEY,
+	gameName varchar(75),
+	gameImage varchar(100),
+	release_date char(10),
+	esrb int,
+	FOREIGN KEY (esrb) REFERENCES Rating(id) ON DELETE SET NULL ON UPDATE CASCADE,
+	info text
+	userFavCount int DEFAULT 0
+);
+
+CREATE OR REPLACE TABLE Genre (
+	id int IDENTITY(1,1) PRIMARY KEY,
+	genreName varchar(75),
+	info text
+);
+
+CREATE OR REPLACE TABLE Developer (
+	id int IDENTITY(1,1) PRIMARY KEY,
+	devName varchar(75),
+	devImage varchar(100),
+	devLocation varchar(100),
+	info text
+);
+
+CREATE OR REPLACE TABLE Vendor (
+	id int IDENTITY(1,1) PRIMARY KEY,
+	vendorName varchar(75),
+	vendorImage varchar(100),
+	vendorLocation varchar(100),
+	info text
+);
+
+CREATE OR REPLACE TABLE SiteUser (
+	username varchar(15) PRIMARY KEY,
+	userPassword varchar(25),
+	firstName varchar(25),
+	lastName varchar(25),
+	gameFavCount int DEFAULT 0
+);
+
+CREATE OR REPLACE TABLE Administrator (
+	username varchar(15) PRIMARY KEY,
+	adminPassword varchar(25),
+	firstName varchar(25),
+	lastName varchar(25)
+);
+
+CREATE OR REPLACE TABLE Made (
+	developerId int,
+	gameId int,
+	FOREIGN KEY (developerId) REFERENCES Developer(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (gameId) REFERENCES Game(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY (developerId, gameId)
+);
+
+CREATE OR REPLACE TABLE GenreGameMatch (
+	genreId int,
+	gameId int,
+	FOREIGN KEY (genreId) REFERENCES Genre(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (gameId) REFERENCES Game(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY (genreId, gameId)
+);
+
+CREATE OR REPLACE TABLE Sells (
+	price real CHECK (price > 0),
+	vendorId int,
+	gameId int,
+	FOREIGN KEY (vendorId) REFERENCES Vendor(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (gameId) REFERENCES Game(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY (vendorId, gameId)
+);
+
+CREATE OR REPLACE TABLE Favorite (
+	username varchar(15),
+	gameId int,
+	FOREIGN KEY (username) REFERENCES SiteUser(username) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (gameId) REFERENCES Game(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY (username, gameId)
+);
+
+
+CREATE OR REPLACE INDEX gameIdIndex ON Game(id);
+
+CREATE OR REPLACE INDEX gameNameIndex ON Game(gameName);
+
+CREATE OR REPLACE INDEX genreIdIndex ON Genre(id);
+
+CREATE OR REPLACE INDEX genreNameIndex ON Genre(genreName);
+
+CREATE OR REPLACE INDEX devIdIndex ON Developer(id);
+
+CREATE OR REPLACE INDEX devNameIndex ON Developer(devName);
+
+CREATE OR REPLACE INDEX vendorIdIndex ON Vendor(id);
+
+CREATE OR REPLACE INDEX vendorNameIndex ON Vendor(vendorName);
+
+CREATE OR REPLACE INDEX madeDeveloperIdIndex ON Made(developerId);
+
+CREATE OR REPLACE INDEX madeGameIdIndex ON Made(gameId);
+
+CREATE OR REPLACE INDEX matchGenreIdIndex ON GenreGameMatch(genreId);
+
+CREATE OR REPLACE INDEX matchGameIdIndex ON GenreGameMatch(gameId);
+
+CREATE OR REPLACE INDEX sellsVendorId ON Sells(vendorId);
+
+CREATE OR REPLACE INDEX sellsGameId ON Sells(gameId);
+
+
+CREATE OR REPLACE PROCEDURE AddGame (adminNewGame @gameName varchar(75), @gameImage varchar(100), @release_date varchar(10), @esrb int, @info text, @genreId int, @developerId int, @vendorId int, @price real)
+AS
+BEGIN
+	DECLARE @gameNameHash int;
+	SET @gameNameHash = CHECKSUM(@gameName);
+
+	INSERT INTO Game(id, gameName, gameImage, @release_date, esrb, info) VALUES(@gameNameHash, @gameName, @gameImage, @release_date, @esrb, @info);
+	INSERT INTO GenreGameMatch VALUES(@genreId, @gameNameHash);
+	INSERT INTO Made VALUES(@developerId, @gameNameHash);
+	INSERT INTO Sells VALUES(@price, @vendorId, @gameNameHash);
+END; 
+
+
+CREATE OR REPLACE TRIGGER UpdateGameFavCount ON Favorite
+AFTER INSERT OR DELETE
+AS
+BEGIN
+	DECLARE @newCount int;
+	DECLARE @user;
+	SELECT INTO @newCount count FROM INSERTED i;
+	SELECT INTO @user username FROM INSERTED i;
+	@newCount = @newCount + 1;
+	UPDATE SiteUser SET gameFavCount = @newCount WHERE username = @user;	
+END;
+
+CREATE OR REPLACE TRIGGER UpdateUserFavCount ON Favorite
+AFTER INSERT OR DELETE
+AS
+BEGIN
+	DECLARE @newCount int;
+	DECLARE @game;
+	SELECT INTO @newCount count FROM INSERTED i;
+	SELECT INTO @game gameId FROM INSERTED i;
+	@newCount = @newCount + 1;
+	UPDATE Game SET userFavCount = @newCount WHERE gameId = @game;	
+END;
