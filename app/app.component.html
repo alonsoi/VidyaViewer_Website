@@ -1,0 +1,51 @@
+<!-- Programmed by David Jones -->
+<!-- Th app component displays the toolbar  -->
+
+<mat-toolbar color="primary">
+    <!-- <div class="example-sidenav-content">
+        <button type="button" mat-button (click)="drawer.toggle()">
+        Toggle sidenav
+        </button>
+    </div> -->
+    <h1 routerLink="/home" routerLinkActive="active">Vidya Viewer</h1>
+    <span class="example-spacer"></span>
+    <mat-card class = "search-bar">
+
+    </mat-card>
+    <span class="example-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/developers" routerLinkActive="active">Developers</button>
+        <button mat-menu-item routerLink="/games" routerLinkActive="active">Games</button>
+        <!-- <button mat-menu-item routerLink="/genres" routerLinkActive="active">Genres</button> -->
+        <!-- <button mat-menu-item routerLink="/rating" routerLinkActive="active">Ratings</button> -->
+        <button mat-menu-item routerLink="/vendors" routerLinkActive="active">Vendors</button>
+        <button mat-menu-item routerLink="/admin" routerLinkActive="active">Admin</button>
+    </mat-menu>
+</mat-toolbar>
+
+
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+            <button mat-menu-item routerLink="/developers" routerLinkActive="active">Developers</button>
+            <button mat-menu-item routerLink="/games" routerLinkActive="active">Games</button>
+            <!-- <button mat-menu-item routerLink="/genres" routerLinkActive="active">Genres</button> -->
+            <!-- <button mat-menu-item routerLink="/rating" routerLinkActive="active">Ratings</button> -->
+            <button mat-menu-item routerLink="/vendors" routerLinkActive="active">Vendors</button>
+            <button mat-menu-item routerLink="/admin" routerLinkActive="active">Admin</button>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+
+
+
+
+
+

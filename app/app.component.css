@@ -1,0 +1,17 @@
+.example-spacer 
+{
+    flex: 1 1 auto;
+}
+.mat-drawer
+{
+    height: auto;
+    width: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-bar
+{
+    width: 50rem;
+    height: 5rem;
+}
